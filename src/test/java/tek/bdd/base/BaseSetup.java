@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class BaseSetup {
-    //
+    //WebDriver to how access in every method
     private static WebDriver driver;
 
     //Getter for WebDriver
