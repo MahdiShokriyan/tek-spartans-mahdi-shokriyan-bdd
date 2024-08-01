@@ -31,27 +31,4 @@ public class SetupTestSteps extends SeleniumUtility {
         Assert.assertTrue(isButtonEnable);
     }
 
-    @When("user click on sign in link")
-    public void clickOnSignIn() {
-        clickOnElement(By.id("signinLink"));
-    }
-
-    @Then("Validate user is in sign In page")
-    public void validateSignInPage() {
-        String mathias = getElementText(By.className("login__subtitle"));
-        Assert.assertEquals("Sign in", mathias);
-    }
-
-    @When("user enter username and password and click on login")
-    public void logInInformation() {
-        sendText(By.id("email"), "mahdi.mahdi@gmail.com");
-        sendText(By.id("password"), "Mahdi123!");
-        clickOnElement(By.id("loginBtn"));
-    }
-
-    @Then("user should be able to see account link")
-    public void validateLogInSuccessfully() {
-        boolean isVisible = elementIsVisible(By.id("accountLink"));
-        Assert.assertTrue(isVisible);
-    }
 }
