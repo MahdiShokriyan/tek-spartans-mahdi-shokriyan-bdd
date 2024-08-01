@@ -35,4 +35,9 @@ public class SeleniumUtility extends BaseSetup {
         return waitForVisibility(locator).getText();
     }
 
+    //validate the button is disable or enable
+    public boolean isElementEnabled(By locator){
+        return waitForVisibility(locator).isEnabled();
+    }
+
 }
