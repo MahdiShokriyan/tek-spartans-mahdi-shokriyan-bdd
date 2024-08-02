@@ -23,10 +23,10 @@ Feature: this future is for user story 1
   Scenario Outline:
     When user click on sign in link
     Then Validate user is in sign In page
-    When user enter <userName> and <password> and click on login
+    When user enter "<userName>" and "<password>" and click on login
     Then user should see error "wrong username or password"
 
     Examples:
-      | userName                 |  | password       |
-      | "mahdi.mahdi123@gmail.com" |  |"Mahdi123!"      |
-      | "mahdi.mahdi123@gmail.com" |  | "notpassword@11" |
+      | userName                   | password         |
+      | mahdi.mahdi123@gmail.com | Mahdi123!      |
+      | mahdi.mahdi123@gmail.com| notpassword@11 |
