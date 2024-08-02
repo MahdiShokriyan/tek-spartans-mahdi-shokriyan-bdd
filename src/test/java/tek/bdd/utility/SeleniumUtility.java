@@ -27,6 +27,7 @@ public class SeleniumUtility extends BaseSetup {
 
     //writing on a located Field
     public void sendText(By locator, String text) {
+        waitForVisibility(locator).clear();
         waitForVisibility(locator).sendKeys(text);
     }
 
