@@ -27,6 +27,7 @@ Feature: this future is for user story 1
     Then user should see error "wrong username or password"
 
     Examples:
-      | userName                   | password         |
+      | userName                 | password       |
       | mahdi.mahdi123@gmail.com | Mahdi123!      |
-      | mahdi.mahdi123@gmail.com| notpassword@11 |
+      | mahdi.mahdi123@gmail.com | notpassword@11 |
+      | mahdi.mahdi1@gmail.com   | notpassword    |
