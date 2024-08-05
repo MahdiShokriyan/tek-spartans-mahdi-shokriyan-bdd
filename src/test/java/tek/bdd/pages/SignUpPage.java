@@ -16,4 +16,6 @@ public class SignUpPage {
 
     public static final By SIGN_UP_BTN = By.id("signupBtn");
 
+    public static final By SIGN_UP_ERROR = By.className("error");
+
 }
