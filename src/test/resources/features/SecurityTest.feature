@@ -1,6 +1,7 @@
+@Smoke @Regression
 Feature: this future is for user story 1
 
-  Scenario: Navigate to sign in page and sign in with valid username and possword and validate
+  Scenario: Navigate to sign in page and sign in with valid username and password and validate
   user successfully signed in
 
     When user click on sign in link

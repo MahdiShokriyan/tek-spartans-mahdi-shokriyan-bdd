@@ -7,9 +7,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "classpath:features/CreateAccount.feature",
+        features = "classpath:features",
         glue = "tek.bdd.steps",
-        dryRun = false
+        dryRun = false,
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        tags = "@UserStory4.2",
+        plugin = {
+                "html:target/cucumber_report/index.html"
+        }
 )
 public class TestRunner {
 }
