@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "classpath:features",
+        features = "classpath:features/ProfilePage.feature",
         glue = "tek.bdd.steps",
-        dryRun = false,
+        dryRun = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@UserStory4.2",
+       // tags = "@Regression",
         plugin = {
                 "html:target/cucumber_report/index.html"
         }

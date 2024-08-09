@@ -34,7 +34,7 @@ public class BaseSetup {
 
         try {
             String configFilePath = System.getProperty("user.dir") +
-                    "/src/test/resources/configs/qa-config.properties";
+                    "/src/test/resources/configs/dev-config.properties";
             LOGGER.info("Reading Config file " + configFilePath);
             File file = new File(configFilePath);
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -54,6 +54,7 @@ public class BaseSetup {
     public void setupBrowser() {
         String browserType = properties.getProperty("ui.browser");
         boolean isHeadless = Boolean.parseBoolean(properties.getProperty("ui.browser.headless"));
+        LOGGER.info("Running on browser: {} and is Headless: {}",browserType,isHeadless);
         if (browserType.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             if (isHeadless)
@@ -73,6 +74,7 @@ public class BaseSetup {
             throw new RuntimeException("Choose correct browser between Chrome, edge and firefox");
         }
         String url = properties.getProperty("ui.url");
+        LOGGER.debug("Using URL {}", url);
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
