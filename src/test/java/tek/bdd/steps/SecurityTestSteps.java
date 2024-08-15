@@ -3,8 +3,8 @@ package tek.bdd.steps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
-import tek.bdd.pages.*;
+import tek.bdd.pages.HomePage;
+import tek.bdd.pages.SignInPage;
 import tek.bdd.utility.SeleniumUtility;
 
 public class SecurityTestSteps extends SeleniumUtility {

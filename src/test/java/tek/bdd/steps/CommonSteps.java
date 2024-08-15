@@ -3,9 +3,9 @@ package tek.bdd.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
+import tek.bdd.pages.ProfilePage;
 import tek.bdd.utility.SeleniumUtility;
 
 public class CommonSteps extends SeleniumUtility {
@@ -30,8 +30,10 @@ public class CommonSteps extends SeleniumUtility {
         String buttonXpath = "//label[text()= '" + value + "']/..//input";
         sendText(By.xpath(buttonXpath), text);
     }
-    @Then("Validate Toast Displayed")
-    public void isToastDisplayed(){
 
+    @Then("Validate Toast Displayed")
+    public void isToastDisplayed() {
+        boolean isToastDisplayed = elementIsVisible(ProfilePage.TOAST_BOX);
+        Assert.assertTrue("Toast should Displayed ", isToastDisplayed);
     }
 }
