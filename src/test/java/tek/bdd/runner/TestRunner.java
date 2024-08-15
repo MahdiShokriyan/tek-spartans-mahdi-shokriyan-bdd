@@ -1,6 +1,7 @@
 package tek.bdd.runner;
 
 
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonNaming;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "classpath:features/ProfilePage.feature",
         glue = "tek.bdd.steps",
-        dryRun = true,
+        dryRun = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
        // tags = "@Regression",
         plugin = {
@@ -17,4 +18,7 @@ import org.junit.runner.RunWith;
         }
 )
 public class TestRunner {
+
+
+
 }

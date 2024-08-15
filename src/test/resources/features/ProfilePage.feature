@@ -10,6 +10,11 @@ Feature: this is Story No 5
 
   Scenario: Navigate to retail app, log in , and change your name and phone number
     When user click on "Account" link
-    Then Validate user is in Account Page
-    When user update "Name" and "Phone Number"
-
+    Then Validate user can see "Your Profile"
+    When user write on "Name" "Mahdi Jan"
+    When user write on "Phone Number" "1234567538"
+    Then user click on "Update" button
+    Then Validate Toast Displayed
+    When user write on "Name" "Mahdi"
+    When user write on "Phone Number" "1234567538"
+    Then user click on "Update" button
