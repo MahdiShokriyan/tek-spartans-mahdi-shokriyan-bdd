@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "classpath:features/ProfilePage.feature",
+        features = "classpath:features/ProductPage.feature",
         glue = "tek.bdd.steps",
-        dryRun = false,
+        dryRun = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
        // tags = "@Regression",
         plugin = {

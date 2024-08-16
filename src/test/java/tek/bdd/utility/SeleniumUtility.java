@@ -37,17 +37,20 @@ public class SeleniumUtility extends BaseSetup {
 
     //create method for getting the text of a locator
     public String getElementText(By locator) {
+        LOGGER.info("Get element text {} ", locator);
         return waitForVisibility(locator).getText();
     }
 
     //validate the button is disable or enable
     public boolean isElementEnabled(By locator) {
+        LOGGER.info("Checking element is Enabled {}", locator);
         return waitForVisibility(locator).isEnabled();
     }
 
 
     //to check if element is visible or not
     public boolean elementIsVisible(By locator) {
+        LOGGER.info("Checking element is Displayed {}", locator);
         return waitForVisibility(locator).isDisplayed();
     }
 

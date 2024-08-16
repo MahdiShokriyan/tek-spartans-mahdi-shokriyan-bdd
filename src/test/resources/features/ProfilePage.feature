@@ -28,4 +28,7 @@ Feature: this is Story No 5
       When user write on "Confirm Password" "Mahdi1234!"
       When user click on "Change Password" button
       Then Validate Toast Displayed
-
+      When user write on "Previous Password" "Mahdi1234!"
+      When user write on "New Password" "Mahdi123!"
+      When user write on "Confirm Password" "Mahdi123!"
+      When user click on "Change Password" button
