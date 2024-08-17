@@ -5,6 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import tek.bdd.pages.HomePage;
 import tek.bdd.pages.ProfilePage;
 import tek.bdd.utility.SeleniumUtility;
 
@@ -19,9 +21,13 @@ public class CommonSteps extends SeleniumUtility {
     @When("user click on {string} button")
     public void user_click_on_button(String buttonVisibleText) {
 
-        String buttonXpath = "//button[text()='" + buttonVisibleText + "']";
-
-        clickOnElement(By.xpath(buttonXpath));
+        try {
+            String buttonXpath = "//button[text()='" + buttonVisibleText + "']";
+            clickOnElement(By.xpath(buttonXpath));
+        } catch (TimeoutException ex) {
+            String buttonXpath = "//*[text()='" + buttonVisibleText + "']/..";
+            clickOnElement(By.xpath(buttonXpath));
+        }
 
     }
 
@@ -35,5 +41,17 @@ public class CommonSteps extends SeleniumUtility {
     public void isToastDisplayed() {
         boolean isToastDisplayed = elementIsVisible(ProfilePage.TOAST_BOX);
         Assert.assertTrue("Toast should Displayed ", isToastDisplayed);
+    }
+    @When("wait for {} seconds")
+    public void waitForSeconds(Integer seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+    @When("user click on cart link")
+    public void user_click_on_cart_link() {
+        clickOnElement(HomePage.CART_LINK);
     }
 }

@@ -1,4 +1,4 @@
-@Regression
+@Regression @StoryNo5
 Feature: this is Story No 5
 
 
@@ -10,15 +10,15 @@ Feature: this is Story No 5
     Then Validate user can see "Your Profile"
 
   Scenario: Navigate to retail app, log in , and change your name and phone number
-
-
     When user write on "Name" "Mahdi Jan"
     When user write on "Phone Number" "1234567538"
     Then user click on "Update" button
     Then Validate Toast Displayed
+    When wait for 6 seconds
     When user write on "Name" "Mahdi"
-    When user write on "Phone Number" "1234567538"
+    When user write on "Phone Number" "12342567538"
     Then user click on "Update" button
+    When wait for 6 seconds
 
 
     @Regression
@@ -28,7 +28,10 @@ Feature: this is Story No 5
       When user write on "Confirm Password" "Mahdi1234!"
       When user click on "Change Password" button
       Then Validate Toast Displayed
+      When wait for 6 seconds
       When user write on "Previous Password" "Mahdi1234!"
       When user write on "New Password" "Mahdi123!"
       When user write on "Confirm Password" "Mahdi123!"
       When user click on "Change Password" button
+      Then Validate Toast Displayed
+      When wait for 6 seconds

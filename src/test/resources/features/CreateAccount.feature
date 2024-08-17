@@ -8,7 +8,7 @@ Feature: this future is for user story 4
     Then Validate user is in sign In page
     When user click on Create New Account Button
     Then Validate user is in "Sign Up" page
-    When user enter "Mahdi " and "John" and "Password@123" and click on sign up link
+    When user enter "Mahdi " and "random" and "Password@123" and click on sign up link
     Then user should be able to see account link
 
   @UserStory2
@@ -17,7 +17,7 @@ Feature: this future is for user story 4
     Then Validate user is in sign In page
     When user click on Create New Account Button
     Then Validate user is in "Sign Up" page
-    When user enter "Mahdi " and "John12688498@gmail.com" and "Password@123" and click on sign up link
+    When user enter "Mahdi " and "mahdi.mahdi1@gmail.com" and "Mahdi123!" and click on sign up link
     Then user should be able to see "this email is already exist, please use another email address"
 
   @UserStory4.2

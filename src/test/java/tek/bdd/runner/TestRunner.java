@@ -1,18 +1,17 @@
 package tek.bdd.runner;
 
 
-import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonNaming;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "classpath:features/ProductPage.feature",
+        features = "classpath:features",
         glue = "tek.bdd.steps",
-        dryRun = true,
+        dryRun = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-       // tags = "@Regression",
+       tags = "@StoryNo5",
         plugin = {
                 "html:target/cucumber_report/index.html"
         }

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SeleniumUtility extends BaseSetup {
     private static final Logger LOGGER = LogManager.getLogger((SeleniumUtility.class));
-    private WebDriverWait wait;
+
 
     public WebDriverWait getWait() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(20));
@@ -24,6 +24,10 @@ public class SeleniumUtility extends BaseSetup {
 
     //create a method to click on a given Locator
     public void clickOnElement(By locator) {
+        LOGGER.info("Clicking on Element {}", locator);
+        getWait().until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+    public void clickOnElement(WebElement locator) {
         LOGGER.info("Clicking on Element {}", locator);
         getWait().until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
@@ -60,7 +64,7 @@ public class SeleniumUtility extends BaseSetup {
     }
 
     public List<WebElement> getElements(By locator) {
-        return getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("error")));
+        return getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 
     }
 

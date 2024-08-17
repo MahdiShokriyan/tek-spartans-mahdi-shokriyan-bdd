@@ -30,10 +30,11 @@ public class CreateNewAccountSteps extends SeleniumUtility {
 
     @When("user enter {string} and {string} and {string} and click on sign up link")
     public void userFillTheSignUpForm(String name, String email, String password) {
+        gmailRandom = email.equalsIgnoreCase("random")
+                ? JavaUtilities.RandomEmailGenerator(email) : email;
 
-        var random = new JavaUtilities();
         sendText(SignUpPage.ENTER_NAME, name);
-        sendText(SignUpPage.ENTER_EMAIL, random.RandomEmailGenerator(email));
+        sendText(SignUpPage.ENTER_EMAIL, gmailRandom);
         sendText(SignUpPage.ENTER_PASSWORD, password);
         sendText(SignUpPage.ENTER_CONFIRM_PASSWORD, password);
         clickOnElement(SignUpPage.SIGN_UP_BTN);
@@ -53,14 +54,14 @@ public class CreateNewAccountSteps extends SeleniumUtility {
 
     @Then("Validate the errors")
     public void validateTheErrors(DataTable dataTable) {
-        Map<String , String> mathias = dataTable.asMap();
+        Map<String, String> mathias = dataTable.asMap();
         List<WebElement> list = getElements(By.cssSelector(".error"));
 
 
-        Assert.assertEquals(list.get(0).getText(),mathias.get("name"));
-        Assert.assertEquals(list.get(1).getText(),mathias.get("email"));
-        Assert.assertEquals(list.get(2).getText(),mathias.get("password"));
-        Assert.assertEquals(list.get(3).getText(),mathias.get("confirmPassword"));
+        Assert.assertEquals(list.get(0).getText(), mathias.get("name"));
+        Assert.assertEquals(list.get(1).getText(), mathias.get("email"));
+        Assert.assertEquals(list.get(2).getText(), mathias.get("password"));
+        Assert.assertEquals(list.get(3).getText(), mathias.get("confirmPassword"));
     }
 
 }
