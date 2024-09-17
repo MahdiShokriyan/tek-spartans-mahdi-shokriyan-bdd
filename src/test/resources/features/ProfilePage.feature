@@ -5,7 +5,7 @@ Feature: this is Story No 5
   Background:Login to retail app and sign in with credential
     When user click on sign in link
     Then Validate user is in sign In page
-    When user enter "mahdi.mahdi1@gmail.com" and "Mahdi123!" and click on login
+    When user enter "mahdi.mahdi1@gmail.com" and "Password@123" and click on login
     When user click on "Account" link
     Then Validate user can see "Your Profile"
 
@@ -23,15 +23,15 @@ Feature: this is Story No 5
 
     @Regression
     Scenario: Navigate to profile page and change your password
-      When user write on "Previous Password" "Mahdi123!"
+      When user write on "Previous Password" "Password@123"
       When user write on "New Password" "Mahdi1234!"
       When user write on "Confirm Password" "Mahdi1234!"
       When user click on "Change Password" button
       Then Validate Toast Displayed
       When wait for 6 seconds
       When user write on "Previous Password" "Mahdi1234!"
-      When user write on "New Password" "Mahdi123!"
-      When user write on "Confirm Password" "Mahdi123!"
+      When user write on "New Password" "Password@123"
+      When user write on "Confirm Password" "Password@123"
       When user click on "Change Password" button
       Then Validate Toast Displayed
       When wait for 6 seconds
