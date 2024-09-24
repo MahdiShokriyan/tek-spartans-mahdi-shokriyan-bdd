@@ -6,7 +6,7 @@ Feature: this future is for user story 1
 
     When user click on sign in link
     Then Validate user is in sign In page
-    When user enter "mahdi.mahdi1@gmail.com" and "Mahdi123!" and click on login
+    When user enter "mahdi.mahdi1@gmail.com" and "Password@123" and click on login
     Then user should be able to see account link
 
 #  Scenario: Validate sign in with invalid username valid password

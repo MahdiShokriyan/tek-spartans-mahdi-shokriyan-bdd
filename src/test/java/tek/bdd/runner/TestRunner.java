@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = "tek.bdd.steps",
         dryRun = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-       tags = "@StoryNo5",
+       tags = "",
         plugin = {
                 "html:target/cucumber_report/index.html"
         }
