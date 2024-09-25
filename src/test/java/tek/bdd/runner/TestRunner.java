@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
        tags = "",
         plugin = {
-                "html:target/cucumber_report/index.html"
+                "html:target/cucumber_report/index.html",
+                "json:target/jsonReport/report.json"
         }
 )
 public class TestRunner {
